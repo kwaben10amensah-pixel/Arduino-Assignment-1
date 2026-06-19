@@ -1,43 +1,28 @@
-int startValue = 5;
-int ledPin = 13;
+# Arduino Assignment 1 — Smart Countdown
 
-// Function to blink the LED
-void flashLED(int times) {
-  int i = 0;
+This is my submission for Assignment 1 in the
+Programming C++ for Engineers Using Arduino course
+at Ghana Communication Technology University (GCTU).
 
-  while (i < times) {
-    digitalWrite(ledPin, HIGH);
-    delay(300);
+## What this program does
+It counts down from 5 to 1 using a while loop. On each step:
+- It prints "Count: N" to the Serial Monitor.
+- It blinks the on-board LED N times using a function called flashLED().
 
-    digitalWrite(ledPin, LOW);
-    delay(300);
+When the countdown finishes, it prints "=== Countdown Complete ===".
 
-    i++;
-  }
-}
+## Concepts demonstrated
+- Variables (int)
+- Functions with parameters (flashLED)
+- The while loop
+- Digital output (digitalWrite, pinMode)
+- The Serial Monitor (Serial.begin, Serial.print, Serial.println)
 
-void setup() {
-  pinMode(ledPin, OUTPUT);
+## How to run it
+1. Open the .ino file in the Arduino IDE.
+2. Connect an Arduino Uno via USB.
+3. Select Tools > Board > Arduino Uno and the correct Port.
+4. Click Upload, then open Tools > Serial Monitor (9600 baud).
 
-  Serial.begin(9600);
-
-  Serial.println("=== Smart Countdown Starting ===");
-
-  int currentCount = startValue;
-
-  while (currentCount >= 1) {
-    Serial.print("Count: ");
-    Serial.println(currentCount);
-
-    flashLED(currentCount);
-
-    delay(1000);
-
-    currentCount--;
-  }
-
-  Serial.println("=== Countdown Complete ===");
-}
-
-void loop() {
-}
+## Author
+[Your Full Name] — [Your Index Number]
